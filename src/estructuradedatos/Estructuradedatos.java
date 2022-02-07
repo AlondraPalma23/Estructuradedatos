@@ -64,9 +64,8 @@ public class Estructuradedatos {
                         posm = i;
                     }
                 }
-                
-                System.out.println("El menor es: " + menor + " en la posición " + "[ " + posm + " ]");
-                System.out.println("El mayor es: " + mayor + " en la posición " + "[ " + posM + " ]");
+                System.out.println("El menor es: " + menor + " en la posición: " + "[ " + posm + " ]");
+                System.out.println("El mayor es: " + mayor + " en la posición: " + "[ " + posM + " ]");
             }else{
                 System.out.println("El tiempo se pasa de 1 hora");
             }     
