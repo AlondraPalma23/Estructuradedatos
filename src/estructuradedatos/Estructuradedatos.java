@@ -45,8 +45,8 @@ public class Estructuradedatos {
             }
             
             if (suma <= 60) {
-                System.out.println("El tiempo empleado es " + suma);
-                System.out.println("El tiempo promedio es " + promedio);
+//                System.out.println("El tiempo empleado es " + suma);
+//                System.out.println("El tiempo promedio es " + promedio);
                 
                 double mayor;
                 double menor;
@@ -64,6 +64,8 @@ public class Estructuradedatos {
                         posm = i;
                     }
                 }
+                System.out.println("El tiempo empleado es " + suma);
+                System.out.println("El tiempo promedio es " + promedio);
                 System.out.println("El menor es: " + menor + " en la posición: " + "[ " + posm + " ]");
                 System.out.println("El mayor es: " + mayor + " en la posición: " + "[ " + posM + " ]");
             }else{
