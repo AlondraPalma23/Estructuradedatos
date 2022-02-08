@@ -21,7 +21,7 @@ public class Estructuradedatos {
     }
     public static void Tarea1_1() {
         separador();
-        System.out.println("-----------------[Tarea 1.1]--------------------");
+        System.out.println("-----------------[Tarea 1.1.1]--------------------");
         Scanner teclado = new Scanner(System.in);
  
         String nombre;
@@ -76,8 +76,64 @@ public class Estructuradedatos {
         }
     }
     
+    public static void Tarea1_2() {
+        separador();
+        System.out.println("-----------------[Tarea 1.1.2]--------------------");
+        Scanner teclado = new Scanner(System.in);
+        
+        int cant;
+        System.out.println("¿Cuántos alumnos hay en la clase?");
+        cant = teclado.nextInt();
+        
+        String nombre;
+
+        int nn = 0;
+        char letra;
+
+        
+//        String[][] nAlumnos;
+//        nAlumnos = new String[cant][2];
+        if (cant > 0 && cant <= 10) {
+            for (int i = 1; i < cant; i++) {
+//                System.out.println("Alumno " + i );
+                System.out.println("Ingrese su nombre " + i);
+                nombre = teclado.next();
+
+                
+                System.out.println("Ingrese  su genero F= femenino, M=masculino");
+                letra = teclado.next().charAt(0);
+                if (letra == 'm' || letra == 'M') {
+                    
+                }
+                if (letra  == 'F' || letra == 'f') {
+                    
+                }
+                String[][] nAlumnos;
+                nAlumnos = new String[cant][2];
+                
+                
+            }    
+        }else{
+            System.out.println("Solo se pueden atender Max. 10 alumnos");
+        }
+        
+
+        
+
+        
+//        for (int i = 0; i < cant; i++) { //recorre filas
+//
+//            for (int j = 0; j < 2; j++) { //recorre columnas
+////                    System.out.println("Alumno[" + i + "]");
+//
+//            }
+//        }
+       
+    }   
+    
     public static void main(String[] args) {
-        Tarea1_1();
+//        Tarea1_1();
+        Tarea1_2();
     }
     
 }
