@@ -44,10 +44,7 @@ public class Estructuradedatos {
                 promedio = suma/cant;     
             }
             
-            if (suma <= 60) {
-//                System.out.println("El tiempo empleado es " + suma);
-//                System.out.println("El tiempo promedio es " + promedio);
-                
+            if (suma <= 60) {            
                 double mayor;
                 double menor;
                 mayor = menor = mediTiem[0];
@@ -74,9 +71,11 @@ public class Estructuradedatos {
         }else{
             System.out.println("La cantidad de mediciones no se encuentra en el rango");
         }
-    }   
+    }
     
     public static void main(String[] args) {
+        Datos();
+        separador();
         Tarea1_1();
 
     }
