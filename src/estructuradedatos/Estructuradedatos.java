@@ -103,10 +103,10 @@ public class Estructuradedatos {
                 System.out.println("Ingrese  su genero F= femenino, M=masculino");
                 letra = teclado.next().charAt(0);
                 if (letra == 'm' || letra == 'M') {
-                    
+                    System.out.println("nel :v");
                 }
                 if (letra  == 'F' || letra == 'f') {
-                    
+                    System.out.println("HAZ ESTO PERRO");
                 }
                 String[][] nAlumnos;
                 nAlumnos = new String[cant][2];
