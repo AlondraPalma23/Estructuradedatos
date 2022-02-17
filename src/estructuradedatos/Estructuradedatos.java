@@ -140,13 +140,10 @@ public class Estructuradedatos {
                     }
                 }
             }
-            System.out.println("nombres son:" + alumMusic);
             
-//            for (int i = 0; i < alumMusic.length; i++) {
-//                for (int j = 0; j < alumMusic.length; j++) {
-//                    System.out.println(alumMusic[i][j]);
-//                }
-//            }   
+            for (int i = 0; i < alumMusic.length; i++) {
+                System.out.println("loa alumnos en orden alfabetico" + alumMusic[i]);
+            }  
         } else {    
             System.out.println("solo se permiten max. 10 alumnos");
         }
