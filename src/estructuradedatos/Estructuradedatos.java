@@ -164,12 +164,25 @@ public class Estructuradedatos {
         caracter = teclado.next();
         String [] Pila = new String [tope];
         
-        while (caracter != " ") {            
-            if (caracter == "(") { //parentesis izquierdo
+        while (!" ".equals(caracter)) {            
+            if ("(".equals(caracter)) { //parentesis izquierdo
                 tope++;
                 Pila[tope] = caracter;
-            }else{
-                
+            }else{ 
+                if (")".equals(caracter)) { //parentesis derecho
+                    while (Pila[tope] != "(") {                        
+                        ExpPOS = Pila[tope];  //pop para sacar datos
+                        tope--;
+                        
+                    }
+                }else{
+                    if (caracter == operando) {
+                        ExpPOS =  caracter; //se agrga el caracter a ExpPOS
+                    }else{  //sino es un operador +-*^
+                        ExpPOS = Pila[tope]; //pop para sacar datos
+                        
+                    }
+                }
             }
         }
         
