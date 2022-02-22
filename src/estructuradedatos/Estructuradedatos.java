@@ -155,8 +155,8 @@ public class Estructuradedatos {
         System.out.println("-----------------[Tarea 1.2.1]--------------------");
         Scanner teclado = new Scanner(System.in);
         String caracter;
-        int prioridad;
-        String ExpPOS;
+        int prioridad = 0;
+        String ExpPOS = null;
         int tope;
         tope = 0;
         
@@ -176,18 +176,26 @@ public class Estructuradedatos {
                         
                     }
                 }else{
-                    if (caracter == operando) {
+                    if (caracter == operando) {  //unn Operando =numeros o letras
                         ExpPOS =  caracter; //se agrga el caracter a ExpPOS
                     }else{  //sino es un operador +-*^
-                        ExpPOS = Pila[tope]; //pop para sacar datos
+                        while (tope > 0 && prioridad <= tope) {                            
+                            ExpPOS = ExpPOS + Pila[tope];  //pop 
+                            tope--; //pop
+                        }
                         
+                        tope++;
+                        Pila[tope] = caracter;
                     }
                 }
             }
         }
         
-        
-        
+        while ( tope > 0) {            
+            ExpPOS = ExpPOS + Pila[tope]; //pop
+            tope--; //pop
+        }
+        System.out.println("El resultado en postfija es: " + ExpPOS);
     }
 
     public static void Tarea1_3_1() { //cola
