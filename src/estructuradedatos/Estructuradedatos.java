@@ -100,12 +100,7 @@ public class Estructuradedatos {
             System.out.println("¿Agregar otro alumno si/no?");
             resp = teclado.next();
         } while ("si".equals(resp));
-        
-        for (int j = 0; j < 10; j++) {
-            for (int k = 0; k < 10; k++) {
-                
-            }
-        }
+            
         
 //        if (alumMusic[i].compareTo("F")) {
 //            
@@ -237,6 +232,201 @@ public class Estructuradedatos {
 
     }
     
+    public static void Tarea1_2_1() { //pila
+        separador();
+        System.out.println("-----------------[Tarea 1.2.1]--------------------");
+        Scanner teclado = new Scanner(System.in);
+        String caracter;
+        int prioridad = 0;
+        String ExpPOS = null;
+        int tope;
+        char operando ;
+        tope = 0;
+        
+        
+        
+        System.out.println("Ingrese el caractera leer");
+        caracter = teclado.next();
+        String [] Pila = new String [tope];
+        
+        while (!" ".equals(caracter)) {            
+            if ("(".equals(caracter)) { //parentesis izquierdo
+                tope++;
+                Pila[tope] = caracter;
+            }else{ 
+                if (")".equals(caracter)) { //parentesis derecho
+                    while (Pila[tope] != "(") {                        
+                        ExpPOS = Pila[tope];  //pop para sacar datos
+                        tope--;
+                        
+                    }
+                }else{
+                    if (tope <= 0) {  //un Operando =numeros o letras
+                        ExpPOS =  caracter; //se agrga el caracter a ExpPOS
+                    }else{  //sino es un operador +-*^
+                        while (tope > 0 && prioridad <= tope) {                            
+                            ExpPOS = ExpPOS + Pila[tope];  //pop 
+                            tope--; //pop
+                        }
+                        
+                        tope++;
+                        Pila[tope] = caracter;
+                    }
+                }
+            }
+        }
+        
+        while ( tope > 0) {            
+            ExpPOS = ExpPOS + Pila[tope]; //pop
+            tope--; //pop
+        }
+        System.out.println("El resultado en postfija es: " + ExpPOS);
+    }
+
+    public static void Tarea1_3_1() { //cola
+        separador();
+        System.out.println("-----------------[Tarea 1.3.1]--------------------");
+        Scanner teclado = new Scanner(System.in);
+
+//        String nombres; //dato a almacenar
+        int max = 6; //maximo num. de elementos de la cola
+        String Cola[] = new String[6]; //declarar el arreglo
+        int F = -1; //punteros frente //eliminar
+        int R = -1;//puntero  trasera o final  //insertar
+        int cont = 0; //contador para contar cuantas personas hay en la cola
+//        String nombres;
+//        int numNombre = 0;
+        String resp;
+//        boolean band;
+//        int num = 0;
+//        F = R = -1;   
+        //insertar datos
+        for (int i = 0; i < Cola.length; i++) {
+            System.out.println("Ingresa nombres del cliente " + "[" + i + "]");
+            //            insertar/meter a la cola
+            if (R < max - 1) { // para ver si hay espacio ??-1
+                R++; //actualiza final R++
+                Cola[R] = teclado.next();//dato
+//                Cola[R] = Cola[F];
+                cont ++; //contar cuantas personas hay en la cola
+//                numNombre++;
+                if (R == 0) { //se inserto el elemento a la cola *o ceros
+                    F = 0;
+                }
+            } else {
+                System.out.println("la cola esta llena");
+            }
+        }
+        
+        System.out.println("Actualmente hay en la cola: " + cont + " personas");
+        
+        do {                        
+            if (F != -1) {
+                System.out.println("-----------------------------------------");
+                Cola[R]= Cola[F] ;
+                System.out.println("Atendiendo a: " + Cola[R]);
+                cont= cont-1;
+//                System.out.println(Cola[F] );
+//                cont= cont-F;
+                System.out.println("El numero de personas en cola son: " + cont);
+                if (F == R) {
+                    F = -1;
+                    R = -1;
+                    System.out.println("cola vacia");
+                }else{
+                    F++;
+                    for (int i = 0; i < cont; i++) {
+                        System.out.println(Cola[i]);
+                    }
+                }
+            } else {
+                System.out.println("cola vacía");    
+            }
+            
+            System.out.println("¿Desea atender otro cliente? ");   
+            resp = teclado.next();
+             
+        } while ("si".equals(resp));
+        
+
+        
+        
+        //        int i = 0;
+//        String[][] alumMusic = new String[i][2];
+//        do {
+//
+//            System.out.println("Ingrese los nombres" + "[" + i + "]");
+//            alumMusic[i][0] = teclado.next();
+//            contN++;
+//
+//            System.out.println("Ingrese su genero F=femenino o M= masculino ");
+//            alumMusic[i][1] = teclado.next();
+//            System.out.println("¿Agregar otro alumno si/no?");
+//            resp = teclado.next();
+//        } while ("si".equals(resp));
+
+
+
+
+        
+//        while (!"si".equals(resp)) {            
+//            //eliminar cola o sacar dato o leer
+//            System.out.println("En cola...." + R + "personas");
+//            for (int i = 0; i < Cola.length; i++) {
+//                if (F != -1) {
+//                    nombres = Cola[F]; //dato
+//                    if (F == R) {
+//                        F = -1;
+//                        R = -1;
+//                    }else{
+//                        F = F +1;
+//                        System.out.println(Cola[F]);
+////                        return;
+//                    }
+//                } else {
+//                    System.out.println("cola vacia");
+//                }
+//            }
+//        }
+        
+//        if ("si".equals(resp) || resp == "SI") {
+//            System.out.println("Atendiendo a: " + Cola[F]);
+//            System.out.println("En cola...." + R + "personas");
+//            for (int i = 0; i < Cola.length; i++) {
+//                if (F != -1) {
+//                    nombres = Cola[F];
+//                    
+//                    if (F == R) {
+//                        F = -1;
+//                        R = -1;
+//                    }else{
+//                        F++;
+//                    }
+//                }else{    
+//                    
+//                }
+//            }
+//        }       
+//        
+        
+//            //eliminar cola o sacar dato o leer
+//            
+//            if (F != -1) { // si hay elementos dentro de la cola o ver q no este vacia
+//                nombres = teclado.next();
+//                Cola[F] = nombres; //dato
+//                if (F == R) { //si solo hay un elemento *-1
+//                    F = -1;  //*-1
+//                    R = - 1; //la cola esta vacia *-1
+//                } else {
+//                    F++; //f++
+//                }
+//                //return nombres; //dato
+//            } else {
+//                System.out.println("Cola vacía ");
+//                //return null; 
+//            }
+    }
+
     
     // quita el comentario de la tarea a visualizar
     public static void main(String[] args) {
@@ -244,6 +434,7 @@ public class Estructuradedatos {
         separador();
         Tarea1_1_1();
         Tarea1_1_2();
+        Tarea1_3_1(); //cola
     
     }
     
