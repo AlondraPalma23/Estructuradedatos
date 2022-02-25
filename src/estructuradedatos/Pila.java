@@ -6,7 +6,7 @@ package estructuradedatos;
 
 /**
  *
- * @author EduardoPalma
+ * @author AlondraPalma
  */
 public class Pila {
     String [] arrayPila;
