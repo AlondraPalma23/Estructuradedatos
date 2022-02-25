@@ -94,7 +94,7 @@ public class Estructuradedatos {
         if (AlumIngreso > 0 && AlumIngreso <= 10) {
 
             for (int i = 0; i < AlumIngreso; i++) {
-                System.out.println("Ingrese los nombres [" + i + "]" + "[" + 0 + "]");
+                System.out.println("-Ingrese los nombres [" + i + "]" + "[" + 0 + "]");
                 alumMusic[i][0] = teclado.next();
                 System.out.println("Ingrese su genero F=femenino o M= masculino [" + i + "]" + "[" + 1 + "]");
                 alumMusic[i][1] = teclado.next();
@@ -118,7 +118,7 @@ public class Estructuradedatos {
             //ordenar a las mujeres
             for (int i = 0; i < alumMusic.length; i++) {
                 for (int j = 0; j < alumMusic.length; j++) {
-                    if (alumMusic[i][0].compareToIgnoreCase(alumMusic[0][0]) < 0 && alumMusic[i][1].equalsIgnoreCase("f")) {
+                    if (alumMusic[i][0].compareToIgnoreCase(alumMusic[j][0]) < 0 && alumMusic[i][1].equalsIgnoreCase("f")) {
                         aux1 = alumMusic[i][0];
                         aux2 = alumMusic[i][1];
                         alumMusic[i][1] = alumMusic[j][1];
@@ -141,14 +141,69 @@ public class Estructuradedatos {
                     }
                 }
             }
+            System.out.println("*****************Resultado*******************");
             for (int i = 0; i < alumMusic.length; i++) {
+                
                 System.out.println("[ " +alumMusic[ i ] [ 0 ] + " ] [ " +  alumMusic [ i ] [ 1 ] + " ]");
-//                String[] strings = alumMusic[i];
             }
         }else {
             System.out.println("SOLO SE PERMITEN MAX. 10 ALUMNOS");
         }
     }
+    public static void Tarea1_2_1() { //pila
+        separador();
+        String operadores = "-+*/+!=";
+        String ExpPOS = new String();
+        Pila Mipila = new Pila(100);
+
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("ingrese la expresion infija");
+        String notacion = teclado.nextLine();
+        Conversion expresion = new Conversion(notacion);
+
+        Mipila.MeterDato("(");
+        expresion.caracterFinal(")");
+        for (int i = 0; i < expresion.Caracteres(); i++) {
+            String cadena = expresion.retorno();
+            System.out.println(cadena);
+            //parentesis izquierdo pila}
+            if (cadena.equals("(")) {
+                Mipila.MeterDato(cadena);
+            } else if (operadores.indexOf(cadena) < 0 && !cadena.endsWith(")")) {
+                //SI ES UN OPEANDO SE AÑADE A POSFIJA
+                ExpPOS = ExpPOS.concat(cadena);
+            }
+            //si encuentra un operador
+            if (operadores.indexOf(cadena) >= 0) {
+                if (cadena.equals("!")) {
+                } else {
+                    //si encuentra un operador *-+/!
+                    String Aux = Mipila.VerTope();
+                    int precedenciaQ = operadores.indexOf(cadena); //jerarquie operadores
+                    int precedenciaP = operadores.indexOf(Aux); //funcion quetiene la anterior
+                    while (precedenciaP >= precedenciaQ && !Aux.equals("(")) { //comprarando caracter sig
+                        ExpPOS = ExpPOS.concat(Mipila.sacarDato()); //SACAR POP
+                        Aux = Mipila.VerTope();
+                        precedenciaP = operadores.indexOf(Aux);
+
+                    }
+                }
+                Mipila.MeterDato(cadena);
+            }
+            if (cadena.equals(")")) {
+                String Aux = Mipila.VerTope();
+                //si se encuentra un parentesis izquierdo
+                while (!Aux.equals("(")) {
+                    ExpPOS = ExpPOS.concat(Mipila.sacarDato()); //saca el siguiente elemento
+                    Aux = Mipila.VerTope();
+                }
+                Mipila.sacarDato();
+            }
+        }
+        System.out.println("*********************Resultado**********************");
+        System.out.println(ExpPOS);
+    } 
+    
     public static void Tarea1_3_1() { //cola
         separador();
         System.out.println("-----------------[Tarea 1.3.1]--------------------");
@@ -289,7 +344,7 @@ public class Estructuradedatos {
 //                //return null; 
 //            }
     }
-
+    
     // quita el comentario de la tarea a visualizar
     public static void main(String[] args) {
 //        Datos();
@@ -297,7 +352,6 @@ public class Estructuradedatos {
 //        Tarea1_1_1();
         Tarea1_1_2();
 //        Tarea1_3_1(); //cola
-//    
     }
     
 }
