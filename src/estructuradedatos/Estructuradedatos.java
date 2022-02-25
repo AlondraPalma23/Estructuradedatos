@@ -73,7 +73,6 @@ public class Estructuradedatos {
         }
     }  
     public static void Tarea1_1_2() {
-        separador();
         System.out.println("-----------------[Tarea 1.1.2]--------------------");
         Scanner teclado = new Scanner(System.in);
         int AlumIngreso = 0;
@@ -347,11 +346,12 @@ public class Estructuradedatos {
     
     // quita el comentario de la tarea a visualizar
     public static void main(String[] args) {
-//        Datos();
+        Datos();
         separador();
-//        Tarea1_1_1();
+        Tarea1_1_1();
         Tarea1_1_2();
-//        Tarea1_3_1(); //cola
+        Tarea1_2_1();
+        Tarea1_3_1(); //cola
     }
     
 }
