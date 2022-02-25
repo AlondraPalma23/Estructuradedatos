@@ -78,22 +78,75 @@ public class Estructuradedatos {
         Scanner teclado = new Scanner(System.in);
         int AlumIngreso = 0;
         int contM = 0; //contador de mujeres
+        //auxiliares para ordenar
+        String nomAux;
+        String genAux = null;
+        //auxiliares para ordenar x mujeres y hombres
+        String aux1;
+        String aux2;
         
         System.out.println("Ingrese el numero de alumnos");
         AlumIngreso = teclado.nextInt();
-        //ingresar los a los de los alumnos
         
+        String[][] alumMusic = new String[AlumIngreso][AlumIngreso]; //declara el arreglo
+        
+        //ingresar los a los de los alumnos
         if (AlumIngreso > 0 && AlumIngreso <= 10) {
-            String[][] alumMusic = new String[AlumIngreso][AlumIngreso]; //declara el arreglo
+
             for (int i = 0; i < AlumIngreso; i++) {
-                System.out.println("Ingrese los nombres [" + i + "]"+ "[" +0+ "]");
-                alumMusic[ i ] [ 0 ] = teclado.next();
+                System.out.println("Ingrese los nombres [" + i + "]" + "[" + 0 + "]");
+                alumMusic[i][0] = teclado.next();
                 System.out.println("Ingrese su genero F=femenino o M= masculino [" + i + "]" + "[" + 1 + "]");
                 alumMusic[i][1] = teclado.next();
                 if (alumMusic[i][1].equalsIgnoreCase("f")) {
                     contM++;
                 }
             }
+
+            for (int i = 0; i < alumMusic.length; i++) {
+                for (int j = 0; j < alumMusic.length; j++) {
+                    if (alumMusic[i][1].equalsIgnoreCase("f")) {
+                        nomAux = alumMusic[i][0];
+                        genAux = alumMusic[i][1];
+                        alumMusic[i][0] = alumMusic[j][0];
+                        alumMusic[i][1] = alumMusic[j][1];
+                        alumMusic[j][1] = genAux;
+                        alumMusic[j][0] = nomAux;
+                    }
+                }
+            }
+            //ordenar a las mujeres
+            for (int i = 0; i < alumMusic.length; i++) {
+                for (int j = 0; j < alumMusic.length; j++) {
+                    if (alumMusic[i][0].compareToIgnoreCase(alumMusic[0][0]) < 0 && alumMusic[i][1].equalsIgnoreCase("f")) {
+                        aux1 = alumMusic[i][0];
+                        aux2 = alumMusic[i][1];
+                        alumMusic[i][1] = alumMusic[j][1];
+                        alumMusic[j][1] = aux2;
+                        alumMusic[i][0] = alumMusic[j][0];
+                        alumMusic[j][0] = aux1;
+                    }
+                }
+            }
+            //ordenar A LOS HOMBRES
+            for (int i = 0; i < alumMusic.length; i++) {
+                for (int j = 0; j < alumMusic.length && i != j; j++) {
+                    if (alumMusic[i][0].compareToIgnoreCase(alumMusic[j][0]) < 0 && alumMusic[i][1].equalsIgnoreCase("m")) {
+                        aux1 = alumMusic[i][0];
+                        aux2 = alumMusic[i][1];
+                        alumMusic[i][1] = alumMusic[j][1];
+                        alumMusic[j][1] = aux2;
+                        alumMusic[i][0] = alumMusic[j][0];
+                        alumMusic[j][0] = aux1;
+                    }
+                }
+            }
+            for (int i = 0; i < alumMusic.length; i++) {
+                System.out.println("[ " +alumMusic[ i ] [ 0 ] + " ] [ " +  alumMusic [ i ] [ 1 ] + " ]");
+//                String[] strings = alumMusic[i];
+            }
+        }else {
+            System.out.println("SOLO SE PERMITEN MAX. 10 ALUMNOS");
         }
     }
     public static void Tarea1_3_1() { //cola
