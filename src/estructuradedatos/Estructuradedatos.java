@@ -24,9 +24,9 @@ public class Estructuradedatos {
         System.out.println("-----------------[Tarea 1.1.1]--------------------");
         Scanner teclado = new Scanner(System.in);
  
-        String nombre;
-        System.out.println("Escribe el nombre del empleado");
-        nombre = teclado.nextLine();
+//        String nombre;
+//        System.out.println("Escribe el nombre del empleado");
+//        nombre = teclado.nextLine();
         
         int cant ;
         System.out.println("¿Cuántas mediciones vas a realizar");
@@ -72,234 +72,44 @@ public class Estructuradedatos {
             System.out.println("La cantidad de mediciones no se encuentra en el rango");
         }
     }  
-
     public static void Tarea1_1_2() {
         separador();
         System.out.println("-----------------[Tarea 1.1.2]--------------------");
         Scanner teclado = new Scanner(System.in);
-        String nombre = null;
-        int contN = 0;
-        int Num = 0;
-        String resp = null ;
-        String gene ;
+        int AlumIngreso = 0;
+        int contM = 0; //contador de mujeres
         
+        System.out.println("Ingrese el numero de alumnos");
+        AlumIngreso = teclado.nextInt();
+        //ingresar los a los de los alumnos
         
-//        System.out.println("Ingrese el numero de alumnos");
-//        Num = teclado.nextInt();
-        
-        int i = 0;
-        String[][] alumMusic = new String[i][2];
-        do {
-              
-            System.out.println("Ingrese los nombres" + "[" + i + "]");
-            alumMusic[i][0] = teclado.next();
-            contN++;
-            
-            System.out.println("Ingrese su genero F=femenino o M= masculino " );
-            alumMusic[i][1] = teclado.next();
-            System.out.println("¿Agregar otro alumno si/no?");
-            resp = teclado.next();
-        } while ("si".equals(resp));
-            
-        
-//        if (alumMusic[i].compareTo("F")) {
-//            
-//        }
-        
-//        System.out.println(alumMusic[1][0] + alumMusic[i][1]);
-//        for (int j = 0; j < alumMusic[i][0].length(); j++) {
-//            for (int k = 0; k < alumMusic[i][1].length(); k++) {
-//              System.out.println(nombre + gene);  
-//            }
-//        }
-        
-        
-//        for (int i = 0; i < Num; i++) {
-//            for (int j = 0; j < 2; j++) {
-//                System.out.println("Ingrese los nombres" + "[" + i + "]");
-//                nombre = teclado.next();
-//                alumMusic[i][0] = nombre;
-//                System.out.println("Ingrese su genero F=femenino o M= masculino ");
-//                gene = teclado.next();
-//                System.out.println("¿Agregar otro alumno si/no?");
-//                resp = teclado.next();
-//            }
-//        }
-
-        
-        
-
-//        System.out.println("nel" + contN);
-        
-        
-        
-        
-//        for (int i = 0; i <= alumMusic.length; i++) {
-//            for (int j = 0; j < 2; j++) {
-//                System.out.println("¿cual es tu nombre?");
-//                alumMusic[i][0] = teclado.next();
-//                contN++; 
-//                System.out.println("Ingrese su genero F=femenino o M= masculino ");
-//                gene = teclado.next();
-//                if () {
-//                    
-//                }
-//            }
-//        }    
-        
-//        while (contN > 0 && contN <= 10) {  
-//            System.out.println("¿cual es tu nombre?");
-//            nombre = teclado.next();
-//            contN++;
-//            System.out.println("Ingrese su genero F=femenino o M= masculino ");
-//            gene = teclado.next();
-//            
-//        }
-//        for (int i = 0; i <= alumMusic.length; i++) {
-//            for (int j = 0; j < alumMusic.length; j++) {
-//
-//                
-//                
-//                System.out.println("Ingrese su genero F=femenino o M= masculino ");
-//                alumMusic[i][1] = teclado.next();
-//            }
-//        }           
-      
-        
-         
-
-        
-        
-        
-        
-        
-        //String[][] alumMusic = new String[cant][2];
-        //String [] genero = new String[2];
-        
-//        if (cant <= 10) {
-//            for (int i = 0; i < alumMusic.length ; i++) {
-////                for (int j = 0; j < alumMusic.length ; j++) {
-//                    System.out.println("¿cual es tu nombre?");
-//                    nombre = teclado.next();
-//                    
-//                    //for (int k = 0; k < 2; k++) {
-//                    System.out.println("Ingrese su genero F=femenino o M= masculino ");
-//                    gene = teclado.next();
-//            }
-                    
-//                if (nn == 0) {
-//                    nn = 1;
-//                    alumMusic[0]  = nombre;
-//                } else { 
-//                    band = 0;
-//                    
-//                    i = -1;
-//                    
-//                    do { 
-//                       i = i + 1; 
-//                       
-//                        if (nombre == alumMusic[i]) {
-//                            band = 1 ;
-//                            a =  max + 1 ;
-//                            b = max;
-//                            
-//                            do {
-//                                alumMusic[a] = alumMusic[b];
-//                                a = a - 1;
-//                                b = b - 1;
-//                            } while (a == i);
-//                        }else{ 
-//                            
-//                        }
-//                    } while (i == max || band == 1);
-//                    
-//                    max = max + 1;
-//                    
-//                    if (band == 1 ) {
-//                        alumMusic[i] = nombre;
-//                    } else {
-//                        alumMusic[max] = nombre;
-//                    }
-//                }
-//            }
-//            
-//            for (int i = 0; i < alumMusic.length; i++) {
-//                System.out.println("los alumnos en orden alfabetico" + alumMusic[i]);
-//            }  
-//        } else {    
-//            System.out.println("solo se permiten max. 10 alumnos");
-//        }
-
-    }
-    
-    public static void Tarea1_2_1() { //pila
-        separador();
-        System.out.println("-----------------[Tarea 1.2.1]--------------------");
-        Scanner teclado = new Scanner(System.in);
-        String caracter;
-        int prioridad = 0;
-        String ExpPOS = null;
-        int tope;
-        char operando ;
-        tope = 0;
-        
-        
-        
-        System.out.println("Ingrese el caractera leer");
-        caracter = teclado.next();
-        String [] Pila = new String [tope];
-        
-        while (!" ".equals(caracter)) {            
-            if ("(".equals(caracter)) { //parentesis izquierdo
-                tope++;
-                Pila[tope] = caracter;
-            }else{ 
-                if (")".equals(caracter)) { //parentesis derecho
-                    while (Pila[tope] != "(") {                        
-                        ExpPOS = Pila[tope];  //pop para sacar datos
-                        tope--;
-                        
-                    }
-                }else{
-                    if (tope <= 0) {  //un Operando =numeros o letras
-                        ExpPOS =  caracter; //se agrga el caracter a ExpPOS
-                    }else{  //sino es un operador +-*^
-                        while (tope > 0 && prioridad <= tope) {                            
-                            ExpPOS = ExpPOS + Pila[tope];  //pop 
-                            tope--; //pop
-                        }
-                        
-                        tope++;
-                        Pila[tope] = caracter;
-                    }
+        if (AlumIngreso > 0 && AlumIngreso <= 10) {
+            String[][] alumMusic = new String[AlumIngreso][AlumIngreso]; //declara el arreglo
+            for (int i = 0; i < AlumIngreso; i++) {
+                System.out.println("Ingrese los nombres [" + i + "]"+ "[" +0+ "]");
+                alumMusic[ i ] [ 0 ] = teclado.next();
+                System.out.println("Ingrese su genero F=femenino o M= masculino [" + i + "]" + "[" + 1 + "]");
+                alumMusic[i][1] = teclado.next();
+                if (alumMusic[i][1].equalsIgnoreCase("f")) {
+                    contM++;
                 }
             }
         }
-        
-        while ( tope > 0) {            
-            ExpPOS = ExpPOS + Pila[tope]; //pop
-            tope--; //pop
-        }
-        System.out.println("El resultado en postfija es: " + ExpPOS);
     }
-
     public static void Tarea1_3_1() { //cola
         separador();
         System.out.println("-----------------[Tarea 1.3.1]--------------------");
         Scanner teclado = new Scanner(System.in);
 
 //        String nombres; //dato a almacenar
-        int max = 6; //maximo num. de elementos de la cola
-        String Cola[] = new String[6]; //declarar el arreglo
+        int max = 5; //maximo num. de elementos de la cola
+        String Cola[] = new String[5]; //declarar el arreglo
         int F = -1; //punteros frente //eliminar
         int R = -1;//puntero  trasera o final  //insertar
         int cont = 0; //contador para contar cuantas personas hay en la cola
-//        String nombres;
-//        int numNombre = 0;
         String resp;
-//        boolean band;
-//        int num = 0;
-//        F = R = -1;   
+
+        
         //insertar datos
         for (int i = 0; i < Cola.length; i++) {
             System.out.println("Ingresa nombres del cliente " + "[" + i + "]");
@@ -309,7 +119,7 @@ public class Estructuradedatos {
                 Cola[R] = teclado.next();//dato
 //                Cola[R] = Cola[F];
                 cont ++; //contar cuantas personas hay en la cola
-//                numNombre++;
+                
                 if (R == 0) { //se inserto el elemento a la cola *o ceros
                     F = 0;
                 }
@@ -335,7 +145,7 @@ public class Estructuradedatos {
                     System.out.println("cola vacia");
                 }else{
                     F++;
-                    for (int i = 0; i < cont; i++) {
+                    for (int i = 0; i < cont; ++i) {
                         System.out.println(Cola[i]);
                     }
                 }
@@ -427,15 +237,14 @@ public class Estructuradedatos {
 //            }
     }
 
-    
     // quita el comentario de la tarea a visualizar
     public static void main(String[] args) {
 //        Datos();
         separador();
-        Tarea1_1_1();
+//        Tarea1_1_1();
         Tarea1_1_2();
-        Tarea1_3_1(); //cola
-    
+//        Tarea1_3_1(); //cola
+//    
     }
     
 }
