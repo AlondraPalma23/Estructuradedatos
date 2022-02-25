@@ -6,7 +6,7 @@ package estructuradedatos;
 
 /**
  *
- * @author EduardoPalma
+ * @author AlondraPalma
  */
 public class Conversion {
     String Qexpre;
@@ -19,14 +19,14 @@ public class Conversion {
         Qexpre = expre;
     }
     
-    //regresar caracter 
+    //para regresar caracter 
     public String retorno(){
         String Aux = Qexpre.substring(indice,indice + 1);
         indice++;
         return (Aux);
     }
     
-    //Agrega caracter al final de qexpresion
+    //se le Agrega caracter al final de qexpresion
     public void caracterFinal(String car){
         Qexpre = Qexpre.concat(car);
         
